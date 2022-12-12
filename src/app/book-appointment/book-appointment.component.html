@@ -1,0 +1,59 @@
+<h2 mat-dialog-title>Book Appointment</h2>
+<mat-dialog-content class="mat-typography">
+    <form  [formGroup]="AppointmentForm" (ngSubmit)="submit()" >
+    <mat-form-field hintLabel="Max 10 characters" appearance="outline">
+        <mat-label>Your Name</mat-label>
+        <input matInput #input maxlength="10" formControlName="name"  placeholder="Ex. Nougat">
+        <mat-hint align="end">{{input.value.length}}/10</mat-hint>
+      </mat-form-field>
+      &nbsp;
+
+      <mat-form-field appearance="outline" >
+        <mat-label>Select Dose</mat-label>
+        <mat-select formControlName="dose">
+          <mat-option value="1">Dose 1</mat-option>
+          <mat-option value="2">Dose 2</mat-option>
+          <mat-option value="3">Dose 3</mat-option>
+        </mat-select>
+      </mat-form-field>
+      &nbsp;
+
+      <mat-form-field appearance="outline" >
+        <mat-label>Choose Location</mat-label>
+        <mat-select formControlName= "loc">
+          <mat-option *ngFor="let d of dataSource"
+           value={{d.center_id}}>{{d.flat_name}},{{d.center_address}},{{d.center_city}}</mat-option>
+          <!-- <mat-option value="2">Dose 2</mat-option>
+          <mat-option value="3">Dose 3</mat-option> -->
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field hintLabel="Max 10 characters" appearance="outline">
+        <mat-label>Mobile Number</mat-label>
+        <input matInput #input maxlength="10" formControlName="mobile_num" placeholder="Mobile Number">
+        <mat-hint align="end">{{input.value.length}}/10</mat-hint>
+      </mat-form-field>
+      &nbsp;
+
+      <mat-form-field hintLabel="Max 6 characters"appearance="outline">
+        <mat-label>Enter OPT</mat-label>
+        <input matInput #input maxlength="6" placeholder="123421"  formControlName="otp" >
+        <mat-hint align="end">{{input.value.length}}/10</mat-hint>
+      </mat-form-field>
+      &nbsp;
+
+      <mat-form-field appearance="outline">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="apt_date">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" (click)="submit()"
+            [disabled]="AppointmentForm.invalid" cdkFocusInitial>REGISTER</button>
+  </mat-dialog-actions>

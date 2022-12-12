@@ -1,0 +1,102 @@
+<!-- <p>sign-up works!</p> -->
+
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('../../assets/covid_signup.jpg');">
+
+
+      <div class="container-fluid mt--9">
+        <h1 style="color:linen">Happy to Register for covid Vaccination</h1>
+        <div class="row">
+          <div class="col">
+            <div class="card-body">
+              <div class="container-fluid">
+                <div class="card">
+                  <div class="card-header card-header-danger ">
+                    <h3 class="card-title">Register to figth with covid</h3>
+                  </div>
+                  <div class="card-body">
+                    <form [formGroup]="newUser" class="example-form">
+
+                      <mat-form-field class="example-full-width">
+                        <input matInput #name maxlength="35" placeholder="Enter Name" type="text"
+                          formControlName="username">
+                        <mat-hint fxLayoutAlign="end"></mat-hint>
+                        <mat-error> Please enter a Your Name </mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field class="example-full-width">
+                        <input matInput #aadhar_num maxlength="12" minlength="12" placeholder="Enter Aadhar Number" type="text"
+                          formControlName="aadhar_num">
+                        <mat-hint fxLayoutAlign="end"></mat-hint>
+                        <mat-error> Please enter a Your Aadhar Number correctly</mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field class="example-full-width">
+                        <mat-label>Enter your email</mat-label>
+                        <input matInput placeholder="pat@example.com" formControlName="email" required>
+                        <mat-error >Please Enter valid email</mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field class="example-full-width">
+                        <input matInput #mobile_no placeholder="Mobile Number" formControlName="mobile_no"
+                          maxlength="10" minlength="8" >
+                        <mat-hint fxLayoutAlign="end"></mat-hint>
+                        <mat-error> Please enter valid Mobile Number</mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field class="example-full-width">
+                        <input matInput #password maxlength="20" placeholder="Password" formControlName="password"
+                          maxlength="10" minlength="4" type="password">
+                        <mat-hint fxLayoutAlign="end"></mat-hint>
+                        <mat-error> Min length :4 ,Max length:10</mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field class="example-full-width">
+                        <input matInput #num maxlength="20" placeholder="Confirm Password" formControlName="con_password"
+                          maxlength="10" minlength="4" type="password">
+                        <mat-hint fxLayoutAlign="end"></mat-hint>
+                        <mat-error> Min length :4 ,Max length:10</mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field class="example-full-width">
+                        <input matInput #address maxlength="50" placeholder="Address 1" type="text"
+                          formControlName="address">
+                        <mat-hint fxLayoutAlign="end">30/4 Sundaram lane,pursaiwalkum</mat-hint>
+                      </mat-form-field>
+
+                      <mat-form-field class="example-full-width">
+                        <input matInput #city maxlength="35" placeholder="Enter Area,City" formControlName="city">
+                        <mat-hint fxLayoutAlign="end">pursaiwalkum,chennai</mat-hint>
+                      </mat-form-field>
+
+
+                      <mat-form-field class="example-full-width">
+                        <input matInput #postalCode maxlength="6" minlength="6" placeholder="Postal Code"
+                          formControlName="postalCode">
+                        <mat-hint fxLayoutAlign="end">600007</mat-hint>
+                        <mat-error> Please enter 6 digit Postal code </mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field class="example-full-width">
+                        <input matInput #country maxlength="40" minlength="4" placeholder="Country Name"
+                          formControlName="country">
+                        <mat-hint fxLayoutAlign="end">India</mat-hint>
+                        <mat-error> Please enter Country Name </mat-error>
+                      </mat-form-field>
+
+                    </form>
+                    <button fxLayoutAlign="center center" mat-raised-button color="primary" (click)="submit()"
+                    [disabled]="newUser.invalid">Register</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+          <!-- </div> -->
+        </div>
+    </div>
+    </div>
+</div>

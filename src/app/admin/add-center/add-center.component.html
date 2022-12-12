@@ -1,0 +1,75 @@
+<h2 mat-dialog-title>Add Center</h2>
+<mat-dialog-content class="mat-typography">
+    <form  [formGroup]="AddCenterForm" (ngSubmit)="submit()" >
+    <mat-form-field appearance="outline">
+        <mat-label>Center Incharge Name</mat-label>
+        <input matInput formControlName="admin_name"placeholder="Name">
+        <mat-hint>MD Thaqi</mat-hint>
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field appearance="outline">
+        <mat-label>Admin Role</mat-label>
+        <input matInput formControlName="admin_role"placeholder="Role">
+        <mat-hint>Doctor/Nurse</mat-hint>
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field appearance="outline">
+        <mat-label>Admin Email</mat-label>
+        <input matInput formControlName="admin_email" placeholder="Email Id">
+        <mat-hint>thaqicm@gmail.com</mat-hint>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="outline">
+        <mat-label>Admin Password</mat-label>
+        <input matInput placeholder="Password" formControlName="admin_pass" type="password">
+        <mat-hint>*****</mat-hint>
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field appearance="outline">
+        <mat-label>Contant Info</mat-label>
+        <input matInput formControlName="contact_num" placeholder="contact Number" >
+        <mat-hint>04423235454</mat-hint>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="outline">
+        <mat-label>Building Name</mat-label>
+        <input matInput formControlName="flat_name" placeholder="flat Name">
+        <mat-hint>Zapier school</mat-hint>
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field appearance="outline">
+        <mat-label>Center Address</mat-label>
+        <input matInput formControlName="center_address" placeholder="Address">
+        <mat-hint>MLA lane,pursai</mat-hint>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="outline">
+        <mat-label>Center City</mat-label>
+        <input matInput placeholder="city" formControlName="center_city">
+        <mat-hint>chennai</mat-hint>
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field appearance="outline">
+        <mat-label>Center State</mat-label>
+        <input matInput formControlName="center_state" placeholder="State">
+        <mat-hint>Tamil Nadu</mat-hint>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="outline">
+        <mat-label>Center pincode</mat-label>
+        <input matInput maxlength="6"  placeholder="PinCode"formControlName="center_pincode" >
+        <mat-hint>600012</mat-hint>
+      </mat-form-field>
+      &nbsp;
+      <mat-form-field appearance="outline">
+        <mat-label>Center Country</mat-label>
+        <input matInput formControlName="center_country" placeholder="Country">
+        <mat-hint>India</mat-hint>
+      </mat-form-field>
+      </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" (click)="submit()"
+          [disabled]="AddCenterForm.invalid" cdkFocusInitial>REGISTER</button>
+</mat-dialog-actions>

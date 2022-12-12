@@ -1,0 +1,72 @@
+<app-navbarcli></app-navbarcli>
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="card">
+        <!-- <div [(class)]="cards"> -->
+          <h3 class="card-title">My profile</h3>
+        <!-- </div> -->
+        <div class="card-body">
+          <!-- <mat-tab-group>
+            <mat-tab label="Check Your Detail"> -->
+              <form [formGroup]="profile" class="example-form">
+                <mat-form-field class="example-full-width">
+                  <input matInput #name maxlength="20" placeholder="Name"  type="text" formControlName="name">
+                  <mat-hint fxLayoutAlign="end"></mat-hint>
+                  <mat-error> Please enter a Name </mat-error>
+                </mat-form-field>
+
+                  <mat-form-field class="example-full-width" appreance="outline">
+                    <input matInput maxlength="15" placeholder="Email" formControlName="email">
+                    <mat-hint fxLayoutAlign="end"></mat-hint>
+                    <mat-error> Enter email Id </mat-error>
+                  </mat-form-field>
+
+                <table class="example-full-width" cellspacing="0">
+                  <tr>
+
+                    <td>
+                      <mat-form-field class="example-full-width">
+                        <input matInput maxlength="10" placeholder="Mobile Number" formControlName="mn">
+                        <mat-hint fxLayoutAlign="end"></mat-hint>
+                        <mat-error> Enter Mobile Number </mat-error>
+                      </mat-form-field>
+                    </td>
+                  </tr>
+
+                </table>
+                <!-- <p> -->
+                <mat-form-field class="example-full-width">
+                  <input matInput #address1 maxlength="50" placeholder="Address" type="text" formControlName="address">
+                  <mat-hint fxLayoutAlign="end"></mat-hint>
+                  <!-- <mat-error> Please enter a address</mat-error> -->
+                </mat-form-field>
+                <!-- </p> -->
+                <!-- <table class="example-full-width" cellspacing="0"> -->
+                <tr>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <input matInput #state maxlength="15" placeholder="Address 1" formControlName="address1">
+                      <mat-hint fxLayoutAlign="end"></mat-hint>
+                      <mat-error> Please enter a Address (Area) </mat-error>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <input matInput #postalCode maxlength="6" minlength="6" placeholder="Postal Code"
+                        formControlName="pin">
+                      <mat-hint fxLayoutAlign="end"></mat-hint>
+                      <mat-error> Please enter 6 digit Postal code </mat-error>
+                    </mat-form-field>
+                  </td>
+                </tr>
+                <!-- </table> -->
+              </form>
+              <button fxLayoutAlign="end center" mat-raised-button color="primary" (click)="submit()"
+                [disabled]="profile.invalid">save</button>
+            <!-- </mat-tab>
+
+          </mat-tab-group> -->
+        </div>
+      </div>
+    </div>
+  </div>
